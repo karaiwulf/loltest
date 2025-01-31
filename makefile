@@ -7,6 +7,10 @@ loltest: main.c.o loltest.rs.o
 main.c.o: main.c loltest.h
 	clang -g -c $(CFLAGS) -o $@ $<
 
-loltest.rs.o: loltest.rs loltest.h
+loltest.rs.o: loltest.rs
 	rustc -g --emit obj $(RSFLAGS) -o $@ $<
+
+.PHONY: clean
+clean:
+	@rm -f loltest *.o
 
