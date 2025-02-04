@@ -13,8 +13,9 @@ typedef struct ObjectTest {
 	size_t x;
 	size_t y;
 } type_objtest;
-extern size_t objtest_get_x(type_objtest);
-extern size_t objtest_get_y(type_objtest);
+extern type_objtest loltest_objecttest_new();
+extern size_t *objtest_get_x(type_objtest *);
+extern size_t *objtest_get_y(type_objtest *);
 
 extern size_t zero();
 

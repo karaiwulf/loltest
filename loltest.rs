@@ -14,7 +14,22 @@ pub struct ObjectTest {
     x: usize,
     y: usize,
 }
+impl Default for ObjectTest {
+    fn default() -> Self {
+        Self {
+            x: 0,
+            y: 0,
+        }
+    }
+}
 impl ObjectTest {
+    pub fn new() -> Self {
+        Self::default()
+    }
+    #[no_mangle]
+    pub extern "C" fn loltest_objecttest_new() -> Self {
+        Self::new()
+    }
     #[no_mangle]
     pub extern "C" fn objtest_get_x(&self) -> &usize {
         &self.x
